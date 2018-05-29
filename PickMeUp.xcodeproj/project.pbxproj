@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		665FE64320BC35E70093888C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE64220BC35E70093888C /* AppDelegate.swift */; };
-		665FE64520BC35E70093888C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE64420BC35E70093888C /* ViewController.swift */; };
 		665FE64820BC35E70093888C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665FE64620BC35E70093888C /* Main.storyboard */; };
 		665FE64A20BC35E70093888C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665FE64920BC35E70093888C /* Assets.xcassets */; };
 		665FE64D20BC35E70093888C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665FE64B20BC35E70093888C /* LaunchScreen.storyboard */; };
 		665FE65820BC35E80093888C /* PickMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE65720BC35E80093888C /* PickMeUpTests.swift */; };
 		665FE66320BC35E80093888C /* PickMeUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE66220BC35E80093888C /* PickMeUpUITests.swift */; };
+		665FE67120BC46E80093888C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE67020BC46E80093888C /* ProfileViewController.swift */; };
+		665FE67320BC47340093888C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665FE67220BC47340093888C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		665FE63F20BC35E70093888C /* PickMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665FE64220BC35E70093888C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		665FE64420BC35E70093888C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		665FE64720BC35E70093888C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		665FE64920BC35E70093888C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		665FE64C20BC35E70093888C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		665FE65E20BC35E80093888C /* PickMeUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickMeUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		665FE66220BC35E80093888C /* PickMeUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeUpUITests.swift; sourceTree = "<group>"; };
 		665FE66420BC35E80093888C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		665FE67020BC46E80093888C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		665FE67220BC47340093888C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				665FE64220BC35E70093888C /* AppDelegate.swift */,
-				665FE64420BC35E70093888C /* ViewController.swift */,
+				665FE67020BC46E80093888C /* ProfileViewController.swift */,
+				665FE67220BC47340093888C /* BaseViewController.swift */,
 				665FE64620BC35E70093888C /* Main.storyboard */,
 				665FE64920BC35E70093888C /* Assets.xcassets */,
 				665FE64B20BC35E70093888C /* LaunchScreen.storyboard */,
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665FE64520BC35E70093888C /* ViewController.swift in Sources */,
+				665FE67120BC46E80093888C /* ProfileViewController.swift in Sources */,
+				665FE67320BC47340093888C /* BaseViewController.swift in Sources */,
 				665FE64320BC35E70093888C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,11 +433,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F8B6PG46B;
 				INFOPLIST_FILE = PickMeUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobndev.PickMeUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,11 +449,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F8B6PG46B;
 				INFOPLIST_FILE = PickMeUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobndev.PickMeUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
