@@ -19,10 +19,10 @@ struct FacebookPublicProfileRequest: GraphRequestProtocol {
     
     struct Response: GraphResponseProtocol {
         var publicProfile: PublicProfile?
-        public struct PublicProfile: Decodable {
-            public var id: String
-            public var name: String
-            public var picture: PublicImageData
+        struct PublicProfile: Decodable {
+            var id: String
+            var name: String
+            var picture: PublicImageData
             
             enum CodingKeys: String, CodingKey {
                 case id
@@ -30,18 +30,18 @@ struct FacebookPublicProfileRequest: GraphRequestProtocol {
                 case picture
             }
             
-            public struct PublicImageData: Decodable {
-                public var data: PublicImage
+            struct PublicImageData: Decodable {
+                var data: PublicImage
                 
                 enum CodingKeys: String, CodingKey {
                     case data
                 }
             }
             
-            public struct PublicImage: Decodable {
-                public var width: Int
-                public var height: Int
-                public var url: URL
+            struct PublicImage: Decodable {
+                var width: Int
+                var height: Int
+                var url: URL
                 
                 enum CodingKeys: String, CodingKey {
                     case width
