@@ -8,16 +8,30 @@
 
 import UIKit
 import Foundation
-import FacebookCore
-import FacebookLogin
 
+@IBDesignable
 class ProfileViewController: UIViewController {
     @IBOutlet weak var goToMapButton: UIButton!
+    
+    
     @IBOutlet weak var userAva: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var selectionImageView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Button Events
+    
+    @IBAction func driverTap(_ sender: Any) {
+        selectionImageView.image = #imageLiteral(resourceName: "DriverIcon")
+    }
+    
+    @IBAction func passengerTap(_ sender: Any) {
+        selectionImageView.image = #imageLiteral(resourceName: "PassengerIcon")
     }
     
     
