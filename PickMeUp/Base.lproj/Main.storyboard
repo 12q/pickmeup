@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="VerdanaBold.ttf">
+            <string>Verdana-Bold</string>
+        </array>
+        <array key="VerdanaItalic.ttf">
+            <string>Verdana-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login Page-->
         <scene sceneID="Na2-OJ-fNK">
@@ -18,25 +26,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBa-82-sXt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBa-82-sXt">
                                 <rect key="frame" x="124" y="617" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select your Profile"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="UAE-lB-6MQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4h-Yv-zTI">
-                                <rect key="frame" x="16" y="20" width="343" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-Iv-Exs">
+                                <rect key="frame" x="67" y="102" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="WUv-5i-kQJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="Y36-8h-0wi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yepp, you're right, that's the Login Page" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQZ-dN-4x1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="58.5"/>
+                                <color key="backgroundColor" red="0.14951226115226746" green="0.80711549520492554" blue="0.92100352048873901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="UnindentifiedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-kN-Q1w">
+                                <rect key="frame" x="93" y="174" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KBL-Od-t4F"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ygk-uV-T4l"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-Na-Bkn">
+                                <rect key="frame" x="208" y="194" width="77" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="first name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baL-c3-dqk">
+                                <rect key="frame" x="208" y="164" width="77" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Once you've done it, we won't interrupt you..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4h-Yv-zTI">
+                                <rect key="frame" x="38" y="314" width="299" height="21"/>
+                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.11343193799257278" green="0.26766419410705566" blue="0.41302883625030518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5AU-kN-Q1w" firstAttribute="top" secondItem="0hg-Iv-Exs" secondAttribute="bottom" constant="-128" id="0Fx-qv-NrB"/>
+                            <constraint firstItem="0hg-Iv-Exs" firstAttribute="centerX" secondItem="lse-4E-QHA" secondAttribute="centerX" id="BhY-fk-jQX"/>
+                            <constraint firstItem="0hg-Iv-Exs" firstAttribute="top" secondItem="cQZ-dN-4x1" secondAttribute="bottom" constant="23.5" id="GM1-No-qZc"/>
+                            <constraint firstItem="E4h-Yv-zTI" firstAttribute="top" secondItem="0hg-Iv-Exs" secondAttribute="bottom" constant="16" id="Gag-45-Yc3"/>
+                            <constraint firstItem="2hr-Na-Bkn" firstAttribute="top" secondItem="0hg-Iv-Exs" secondAttribute="bottom" constant="-93" id="GeZ-fX-nbh"/>
+                            <constraint firstItem="E4h-Yv-zTI" firstAttribute="centerX" secondItem="lse-4E-QHA" secondAttribute="centerX" id="JXT-OV-Bkc"/>
+                            <constraint firstItem="cQZ-dN-4x1" firstAttribute="leading" secondItem="lse-4E-QHA" secondAttribute="leading" id="KOc-3C-OZo"/>
+                            <constraint firstItem="MBa-82-sXt" firstAttribute="centerX" secondItem="lse-4E-QHA" secondAttribute="centerX" id="LQD-xc-EB9"/>
+                            <constraint firstItem="cQZ-dN-4x1" firstAttribute="top" secondItem="lse-4E-QHA" secondAttribute="top" id="Wjv-SR-Oig"/>
+                            <constraint firstItem="lse-4E-QHA" firstAttribute="bottom" secondItem="MBa-82-sXt" secondAttribute="bottom" constant="20" id="ZiF-am-AW2"/>
+                            <constraint firstItem="lse-4E-QHA" firstAttribute="trailing" secondItem="cQZ-dN-4x1" secondAttribute="trailing" id="aOX-4d-15V"/>
+                            <constraint firstItem="0hg-Iv-Exs" firstAttribute="leading" secondItem="5AU-kN-Q1w" secondAttribute="trailing" constant="-125" id="aTu-0O-6lu"/>
+                            <constraint firstItem="2hr-Na-Bkn" firstAttribute="leading" secondItem="0hg-Iv-Exs" secondAttribute="trailing" constant="-99" id="cDg-UV-Tvd"/>
+                            <constraint firstItem="0hg-Iv-Exs" firstAttribute="top" secondItem="baL-c3-dqk" secondAttribute="bottom" constant="-80" id="kgL-U6-4Sf"/>
+                            <constraint firstItem="baL-c3-dqk" firstAttribute="leading" secondItem="0hg-Iv-Exs" secondAttribute="trailing" constant="-99" id="pmQ-GO-rfL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lse-4E-QHA"/>
                     </view>
+                    <connections>
+                        <outlet property="firstNameLabel" destination="baL-c3-dqk" id="VJ6-GT-GuO"/>
+                        <outlet property="lastNameLabel" destination="2hr-Na-Bkn" id="v5a-XM-5iw"/>
+                        <outlet property="loginIcon" destination="0hg-Iv-Exs" id="ncB-N3-E5X"/>
+                        <outlet property="promiseLabel" destination="E4h-Yv-zTI" id="0Yq-c9-5vI"/>
+                        <outlet property="titleLabel" destination="cQZ-dN-4x1" id="Dr2-RS-c8s"/>
+                        <outlet property="userAva" destination="5AU-kN-Q1w" id="TaK-z3-muX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7Y-FA-UNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,6 +231,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginIcon" width="512" height="406"/>
+        <image name="UnindentifiedIcon" width="50" height="50"/>
         <image name="intro" width="532" height="532"/>
     </resources>
 </document>
