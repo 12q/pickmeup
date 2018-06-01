@@ -7,29 +7,104 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
+@IBDesignable
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var loginIcon: UIImageView!
+    @IBOutlet weak var promiseLabel: UILabel!
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var userAva: UIImageView!
+    
+    
     override func viewDidLoad() {
+
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        placeFacebookButton()
+        fetchProfileInfo()
+        
+//        let loginManager = LoginManager()
+//        LoginManager.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - FB Graph Request
+    
+    private func fetchProfileInfo() {
+        let connection = GraphRequestConnection()
+        connection.add(FacebookPublicProfileRequest()) { (response, result) in
+            switch result {
+            case .success(let response):
+                self.firstNameLabel.text = response.publicProfile?.name
+                self.lastNameLabel.text = response.publicProfile?.name
+                if let url = response.publicProfile?.picture.data.url {
+                    if let data = try? Data(contentsOf: url) {
+                        self.userAva.image = UIImage(data: data)
+                    }
+                }
+            case .failed(let error):
+                print(error.localizedDescription)
+            }
+        }
+        connection.start()
     }
-    */
+    
+    
+    // MARK: - UI customization
+    
+    private func placeFacebookButton() {
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        view.addSubview(loginButton)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.topAnchor.constraint(equalTo: promiseLabel.bottomAnchor, constant: 12).isActive = true
+        loginButton.leadingAnchor.constraint(equalTo: userAva.leadingAnchor).isActive = true
+    }
+    
+    // MARK: - Sys
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
 
+extension UIImageView {
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColor: UIColor? {
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.borderColor = color.cgColor
+            } else {
+                layer.borderColor = nil
+            }
+        }
+    }
 }
